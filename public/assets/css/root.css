@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/* root.scss */
+/* imports des modules scss -imports des css de toutes les pages du site- */
+/* breakpoints bootstrap -taille d'écran- */
+/*
+// Extra large devices (large desktops, 1200px and up)
+@media screen and  (min-width: 1200px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media screen and (min-width: 992px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media screen and (min-width: 576px) {
+
+}
+
+// Small devices (portrait phones, 300px and up)
+@media screen and (max-width: 575.98px) {
+
+}
+*/
+/* app.scss fichier de surcharge */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Hammersmith+One&family=Permanent+Marker&display=swap");
+html, body {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+  max-width: 100% !important;
+  height: 100% !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  min-height: 80vh !important;
+}
+
+/*cache des elements*/
+.hidden {
+  display: none;
+}
+
+/*imports des polices*/
+/*utilisation des polices*/
+/*
+font-family: 'Cairo', sans-serif;
+font-family: 'Hammersmith One', sans-serif;
+font-family: 'Permanent Marker', cursive;
+*/
+/*variables des polices*/
+/*Cairo*/
+/*Permanent Marke*/
+/*Pacifico*/
+footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: bottom !important;
+  bottom: 0 !important;
+}
+footer .row {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 5vh 0 !important;
+}
+
+/* header scss */
+/*navigation*/
+/*navigation*/
+.navbar ul li {
+  font-size: 1.4rem;
+  letter-spacing: 0.4rem !important;
+}
+.navbar ul li a {
+  font-family: "Hammersmith One", sans-serif;
+}
+
+header {
+  background-image: url("../img/giphy.gif");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100% !important;
+  height: auto;
+  padding: 5vh 0 !important;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+}
+header .header-title {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+  text-align: left !important;
+  background-color: grey;
+  opacity: 0.8;
+  border-radius: 5px;
+  border: 3px solid red;
+  width: 100% !important;
+  padding: 1vh 0 !important;
+  /*H1*/
+  /*H2*/
+}
+header .header-title h1, header .header-title h2 {
+  color: red !important;
+  font-family: "Permanent Marker", cursive;
+  opacity: 1;
+}
+@media (max-width: 992px) {
+  header .header-title {
+    margin-bottom: 5vh !important;
+  }
+}
+@media (min-width: 1200px) {
+  header .header-title h1 {
+    font-size: 4.6rem !important;
+    letter-spacing: 0.4rem !important;
+  }
+}
+@media (max-width: 1199px) {
+  header .header-title h1 {
+    font-size: 3rem !important;
+    letter-spacing: 0.6rem;
+  }
+}
+@media (max-width: 992px) {
+  header .header-title h1 {
+    font-size: 2.4rem !important;
+    letter-spacing: 0.4rem;
+  }
+}
+@media (max-width: 768px) {
+  header .header-title h1 {
+    font-size: 2rem !important;
+    letter-spacing: 0.2rem;
+  }
+}
+@media (max-width: 576px) {
+  header .header-title h1 {
+    font-size: 2.2rem !important;
+    letter-spacing: 0.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  header .header-title h2 {
+    font-size: 2.1rem !important;
+    letter-spacing: 0.2rem !important;
+  }
+}
+@media (max-width: 1199px) {
+  header .header-title h2 {
+    font-size: 1.4rem !important;
+    letter-spacing: 0.2rem !important;
+  }
+}
+@media (max-width: 992px) {
+  header .header-title h2 {
+    font-size: 1.8rem !important;
+    letter-spacing: 0.1rem !important;
+  }
+}
+@media (max-width: 768px) {
+  header .header-title h2 {
+    font-size: 1.6rem !important;
+    letter-spacing: 0.2rem !important;
+  }
+}
+@media (max-width: 576px) {
+  header .header-title h2 {
+    font-size: 1.4rem !important;
+    letter-spacing: 0.1rem !important;
+  }
+}
+
+/*# sourceMappingURL=root.css.map */

@@ -1,0 +1,39 @@
+{% include ('incs/nav.html.twig') %}
+
+<header id="header" class="mx-0 container-fluid mb-5">
+
+    <div class="row mx-0">
+
+        {# titre #}
+        <div class="header-title col-11 col-sm-10 col-md-9 col-lg-5 col-xl-5 mx-auto my-auto">
+
+            <h1 class="mx-auto text-center">
+                EXASPLOIT
+            </h1>
+
+            <h2 class="mx-auto text-center mt-3">
+                HACKING MADE SIMPLE
+            </h2>
+
+        </div>
+
+        {# Vidéo présentation #}
+        <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto my-auto">
+
+            {# embed youtube #}
+            <div class="embed-responsive embed-responsive-16by9 mx-auto text-center col-11 col-sm-11 col-md-11 col-lg-10 col-xl-10">
+                <iframe class="embed-responsive-item mx-auto border border-danger rounded"
+                        src="https://www.youtube.com/embed/1C-n6eIfSTQ?rel=0&autoplay=1&mute=1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+{% include 'incs/social.html.twig' %}

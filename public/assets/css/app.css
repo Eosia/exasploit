@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* breakpoints bootstrap -taille d'écran- */
+/*
+// Extra large devices (large desktops, 1200px and up)
+@media screen and  (min-width: 1200px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media screen and (min-width: 992px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media screen and (min-width: 576px) {
+
+}
+
+// Small devices (portrait phones, 300px and up)
+@media screen and (max-width: 575.98px) {
+
+}
+*/
+/* app.scss fichier de surcharge */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Hammersmith+One&family=Permanent+Marker&display=swap");
+html, body {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+  max-width: 100% !important;
+  height: 100% !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  min-height: 80vh !important;
+}
+
+/*cache des elements*/
+.hidden {
+  display: none;
+}
+
+/*imports des polices*/
+/*utilisation des polices*/
+/*
+font-family: 'Cairo', sans-serif;
+font-family: 'Hammersmith One', sans-serif;
+font-family: 'Permanent Marker', cursive;
+*/
+/*variables des polices*/
+/*Cairo*/
+/*Permanent Marke*/
+/*Pacifico*/
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
+    <a class="navbar-brand" href="{{ path('home') }}">
+
+        <!--logo cliquable-->
+        <figure class="img-fluid">
+            <img src="{{ asset('assets/img/favicon/logo-png-transparant.png') }}" loading="lazy"
+                 title="logo exasploit"
+                 alt="logo exasploit" style="width: 150px">
+            <!--figcaption est la legende d'une image-->
+            <figcaption class="hidden">
+                logo exasploit
+            </figcaption>
+        </figure>
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto container">
+            <li class="nav-item active">
+                <a class="nav-link text-white" href={{ path('home') }}>ACCUEIL<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white dropdown-toggle text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    catégorie
+                </a>
+
+                <div class="dropdown-menu navbar-light bg-light border border-danger" aria-labelledby="navbarDropdown">
+                    {% for categorie in categories %}
+                        <a class="dropdown-item text-primary"
+                           href="{{ path('show_categorie', {'slug': categorie.slug}) }}">
+                            {{ categorie.titre | upper }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+
+            </li>
+
+            <li class="nav-item hidden">
+                <a class="nav-link text-white" href="{{ path('about') }}">ABOUT</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ path('contact') }}">CONTACT</a>
+            </li>
+
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="{{ path('admin') }}">ADMIN</a>
+                </li>
+
+            {% else %}
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark disabled" href="#" tabindex="-1" aria-disabled="true">ADMIN</a>
+                </li>
+
+            {% endif %}
+
+        </ul>
+
+    </div>
+</nav>

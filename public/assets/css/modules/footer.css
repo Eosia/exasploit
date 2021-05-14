@@ -1,0 +1,16 @@
+footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: bottom !important;
+  bottom: 0 !important;
+}
+footer .row {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 5vh 0 !important;
+}
+
+/*# sourceMappingURL=footer.css.map */

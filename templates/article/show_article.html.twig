@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EXASPLOIT | {{ article.titre }}{% endblock %}
+
+{% block body %}
+
+
+
+
+    <!--section start-->
+    <section class="container-fluid mb-5 user-select-auto">
+
+        <!--section 1 titre de l'article de presse start-->
+        <div class="jobs-section-1 container mx-auto text-center my-5">
+            <div class="row">
+                <h3 class="mx-auto text-center text-uppercase col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+                    {{ article.titre }}
+                </h3>
+                <p class="mx-auto text-center text-uppercase col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+                    Publié le : {{ article.createdAt | date("d/m/y") }}
+                </p>
+            </div>
+        </div>
+        <!--section 1 titre de l'article de presse stop-->
+
+
+
+        <!--section photo et video de l'article start-->
+        <div class="container-fluid mx-auto text-center">
+            <div class="row mx-auto text-center d-flex justify-content-center align-items-center">
+
+                <div class="embed-responsive embed-responsive-16by9 my-3 mx-auto text-center col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8">
+                    <iframe class="embed-responsive-item mx-auto border border-dark rounded" src="{{ article.video }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+        <!--section photo et video de l'article stop-->
+
+
+        <!--ligne de separation doree stop-->
+
+        <!--section photo et video de l'article start-->
+        <div class="histoire-section-2 container-fluid mx-auto text-center">
+            <div class="row mx-auto text-center d-flex justify-content-center align-items-center">
+                <p class="col-11 col-sm-11 col-md-10 col-lg-10 col-xl-10 text-left">
+                    {{ article.contenu | raw }}
+                </p>
+            </div>
+        </div>
+        <!--section photo et video de l'article stop-->
+
+        <!--bouton de retour start-->
+        <div class="mx-auto text-center col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 my-5">
+            <div class="btn-cta mx-auto my-1 text-center">
+                <a href="{{ path('show_categorie', {'slug': categorie.slug} ) }}"
+                   class="btn btn-primary btn-sm mx-auto text-center text-white col-12 col-sm-11 col-md-10 col-lg-6 col-xl-6 text-uppercase">
+                    RETOUR A LA CATEGORIE
+                </a>
+            </div>
+        </div>
+        <!--bouton de retour stop-->
+
+    </section>
+
+
+
+
+
+{% endblock %}
