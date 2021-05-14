@@ -89,8 +89,8 @@ class ArticleController extends AbstractController
 
             $articles = $categorie->getArticles()->getValues();
 
-            //$articles = $this->repoArticle->findBy([], ['id' => 'desc']);
 
+            //$articles = $categorie->getArticles()->getValues();
         }
 
         else {

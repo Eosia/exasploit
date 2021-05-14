@@ -6,6 +6,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping\OrderBy;
+
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)

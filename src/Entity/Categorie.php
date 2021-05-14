@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping\OrderBy;
 
 
 /**
@@ -28,6 +29,7 @@ class Categorie
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="categorie")
+     * @OrderBy({"id" = "DESC"})
      */
     private $articles;
 
