@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 
+use App\Classe\Search;
+use App\Form\SearchType;
 use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Repository\ArticleRepository;
@@ -38,6 +40,23 @@ class ArticleController extends AbstractController
 
         $articles = $this->repoArticle->findBy([], ['id' => 'desc']);
 
+        /* ---------------------------------------------------------------------------------------------*/
+        $search = new Search();
+        $form = $this->createForm(SearchType::class, $search);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $articles = $this->repoArticle->findWithSearch($search);
+        }
+        else
+        {
+            $articles = $this->repoArticle->findBy([], ['id'=>'desc']);
+        }
+        /* ---------------------------------------------------------------------------------------------*/
+
+
+
         /*pagination page articles*/
         $articles = $paginator->paginate(
             $articles, // Requête contenant les données à paginer (ici nos articles)
@@ -47,6 +66,7 @@ class ArticleController extends AbstractController
 
         return $this->render('article/index.html.twig', [
             'articles' => $articles,
+            'form' => $form->createView(),
             'categorie' => $categorie,
             'categories' => $categories
         ]);
@@ -82,15 +102,10 @@ class ArticleController extends AbstractController
     public function categorie_show(?Categorie $categorie, CategorieRepository $repoCategorie, ArticleRepository $repoArticle): Response
     {
 
-        //$articles = $this->repoArticle->findBy([], ['id' => 'desc']);
-
-
         if($categorie) {
 
             $articles = $categorie->getArticles()->getValues();
 
-
-            //$articles = $categorie->getArticles()->getValues();
         }
 
         else {

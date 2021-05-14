@@ -6,23 +6,57 @@
 
 
     <!--test boucle article-->
-    <section class="container-fluid mx-auto text-center">
-        <div class="row mx-auto text-center d-flex justify-content-center align-items-start">
+    <section class="container-fluid mx-auto text-center mb-5">
 
-            {% for article in articles %}
 
-                <div class="card col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 m-2 py-2 text-center" style="width: 18rem;">
+        <!--nom de la categorie-->
+        <div class=" container mx-auto text-center my-5">
+            <div class="row">
+                <h3 class="mx-auto text-center text-uppercase col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+                    Catégorie : {{ categorie.titre }}
+                </h3>
 
-                    <img src="{{ asset('assets/img/' ~ article.image) }}" loading="lazy" class="card-img-top media-img-show" alt="{{ article.titre }}">
+            </div>
+        </div>
+        <!--nom de la categorie-->
 
-                    <div class="card-body text-left">
-                        <h5 class="card-title mb-2">{{ article.titre }}</h5>
-                        <p class="card-text">{{ article.contenu | striptags | truncate(200) | raw }}</p>
-                        <a href="{{ path('show_article', {'slug': article.slug} ) }}" class="btn btn-primary">VOIR L'ARTICLE</a>
+
+        <div class="row mx-auto text-center my-5">
+
+
+            {% if categorie.articles|length != null %}
+
+                {% for article in articles %}
+
+                    <div class="card col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 my-2 mx-auto text-center" style="width: 18rem;">
+
+                        <img src="{{ asset('assets/img/' ~ article.image) }}" loading="lazy" class="card-img-top mx-auto mt-3" alt="{{ article.titre }}">
+
+                        <div class="card-body text-left">
+                            <h5 class="card-title mb-2">{{ article.titre }}</h5>
+                            <p class="card-text">{{ article.contenu | striptags | truncate(200) | raw }}</p>
+                            <a href="{{ path('show_article', {'slug': article.slug} ) }}" class="btn btn-primary">VOIR L'ARTICLE</a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-8 mx-auto my-5 text-center">
+                    <div class="row mx-auto text-center">
+
+
+                        <img src="{{ asset('assets/img/fail.png') }}" alt="result not found"
+                             class="img-fluid text-center mx-auto col-10 col-sm-10 col-md-10 col-lg-8 col-xl-6">
+
+
                     </div>
                 </div>
 
-            {% endfor %}
+            {% endif %}
+
+
 
         </div>
     </section>

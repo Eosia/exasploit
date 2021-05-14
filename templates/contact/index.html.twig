@@ -6,4 +6,121 @@
 
 
 
+
+    <!--section 1 titre start-->
+    <section class="container mx-auto text-center mt-5">
+        <div class="row">
+            <div class="mx-auto text-center container">
+                {% for message in app.flashes('message') %}
+                    <div class="alert alert-success col-8 mx-auto text-center" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            <h3 class="mx-auto text-center col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 mt-3">
+                Pour nous contacter, merci de compléter ce formulaire :
+            </h3>
+        </div>
+    </section>
+    <!--section 1 titre stop-->
+
+
+    <!--formulaire de contact start-->
+    <section class="contact-section-2 container mx-auto text-center mt-5">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+                {# form de contact -------------------------------------------------------------------------------------------- #}
+
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {{form_start(contactForm)}}
+                    <div class="row mx-auto text-center">
+                        <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto text-left">
+                            <label for="email" class="required"> Email *</label>
+                            <br>
+                            {{form_widget(contactForm.email)}}
+                            {{form_errors(contactForm.email)}}
+
+                        </div>
+
+                    </div>
+                    <div class="row mx-auto">
+                        <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-left">
+                            <label for="objet" class="required"> Objet *</label>
+                            <br />
+                            {{form_widget(contactForm.objet)}}
+                            {{form_errors(contactForm.objet)}}
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left">
+                        <label for="contact_message" class="required"> Message *</label>
+                        <br>
+                        {{form_widget(contactForm.message)}}
+                        {{form_errors(contactForm.message)}}
+                    </div>
+
+                    <div class="form-group mx-auto text-left">
+                        <label for="captcha" class="required mb-3">Cochez le captcha pour envoyer votre message</label>
+                        <br>
+
+                        <div class="mx-auto text-center">
+                            {{form_widget(contactForm.captcha_checkvox) }}
+                        </div>
+                        {{form_errors(contactForm.captcha_checkvox) }}
+                    </div>
+
+                    <div class="form-group">
+                        {{form_widget(contactForm.envoyer)}}
+                    </div>
+
+
+
+                    {# Render CSRF token etc .#}
+                    <div style="display:none">
+                        {{ form_rest(contactForm) }}
+                    </div>
+
+                    {{form_end(contactForm)}}
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--formulaire de contact stop-->
+
+
+    <!--coordonnee mail-->
+    <div class="contact-coo col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto my-5 text-center">
+        <h4 class="mx-auto text-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-5">
+            Email de contact
+        </h4>
+        <p class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto mb-5 text-center">
+
+            <SCRIPT TYPE="text/javascript">
+                emailE = 'exasploit.com'
+                emailE = ('helloworld' + '@' + emailE)
+                document.write('<A class="text-uppercase link-xs" href="mailto:' + emailE + '">' + emailE + '</A>')
+            </script>
+
+            <NOSCRIPT>
+                Email address protected by JavaScript
+            </NOSCRIPT>
+
+        </p>
+
+        <div style="margin-bottom: 10vh !important;"></div>
+
+
+    </div>
+    <!--coordonnee mailstop-->
+
+
+
+
+
+    <!--captcha js-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 {% endblock %}
