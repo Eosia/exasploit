@@ -60,5 +60,44 @@ font-family: 'Permanent Marker', cursive;
 /*Cairo*/
 /*Permanent Marke*/
 /*Pacifico*/
+/*boutons sociaux*/
+/* mixins breakpoints */
+/* Colors */
+.network {
+  background-color: white;
+}
+.network li {
+  list-style-type: none;
+}
+.network a {
+  text-decoration: none;
+}
+.network__link {
+  color: #FCFCFC;
+}
+.network__link--media {
+  color: #FCFCFC;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  align-items: center;
+  overflow: hidden;
+  padding: 1vh 0;
+}
+.network__link--media:hover {
+  color: #0037E5;
+  animation: glow 1.2s infinite alternate;
+  text-decoration: none;
+}
+
+/* Social media buttons keyframe */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px #0037E5;
+  }
+  100% {
+    box-shadow: 0 0 50px #0037E5;
+  }
+}
 
 /*# sourceMappingURL=app.css.map */
